@@ -1,13 +1,11 @@
-//#include <curses.h>
-//#include <term.h>
 #include <termios.h>
 #include <stdio.h>
 
 /*
-tcsetattr, tcgetattr, tgetent, tgetflag,
-tgetnum, tgetstr, tgoto, tputs
+tcsetattr, tcgetattr			https://opensource.apple.com/source/xnu/xnu-344.49/bsd/sys/termios.h.auto.html
 */
-/*
+
+/*								https://www.ibm.com/docs/en/zos/2.3.0?topic=functions-tcsetattr-set-attributes-terminal  
 struct termios {
 	tcflag_t==unsigned long			c_iflag;			// input flags 
 	tcflag_t==unsigned long			c_oflag;			// output flags 
