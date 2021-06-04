@@ -3,25 +3,38 @@
 #include        <curses.h>
 #include        <term.h>
 #include        <stdlib.h>
+#include <termios.h>
+#include  <termcap.h>
+#include <ncurses.h>
+
 
 int     main()
 {
   const char *name;
-  char  *bp;
+  char  **bp;
   char  *term;
   int   height;
   int   width;
 
-  bp = malloc(sizeof(*bp) * 1);
+  bp = (char **)malloc(sizeof(char *) * 1);
+   // *bp = (char *)malloc(sizeof(char) * 1024);
+   // printf("bp:%p\n", bp);
+   // printf("bp:%p\n", *bp);
+  // bp = NULL;
+   *bp = NULL;
   name = "TERM";
   if ((term = getenv(name)) == NULL)
     return (1);
   printf("My terminal is %s.\n", term);
-  printf("tgetent: %d\n", tgetent(bp, term));
+  printf("tgetent: %d\n", tgetent(*bp, term));
   height = tgetnum ("li");
   width = tgetnum ("co");
   printf("H : %d\nL : %d\n", height, width);
+ // printf("bp:-%s-\n", *bp);
+  printf("bp:%p\n", bp);
+  printf("bp:%p\n", *bp);
   free(bp);
+  //tgetnum
   return (0);
 }
 

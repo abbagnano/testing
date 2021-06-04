@@ -1,0 +1,9 @@
+{
+	"files.associations": {
+		"ioctl.h": "c",
+		"ttycom.h": "c",
+		"termcap.h": "c",
+		"ncurses.h": "c",
+		"termios.h": "c"
+	}
+}
